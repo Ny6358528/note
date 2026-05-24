@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:note_app/core/resources/app_text_string.dart';
+import 'package:note_app/core/routing/app_nameing_router.dart';
 import 'package:note_app/core/theme/app_text_style.dart';
-import 'package:note_app/feature/onboarding/widget/bottom_button_in_on_boarding_screen.dart';
+import 'package:note_app/core/widget/custom_elvated_button.dart';
 import 'package:note_app/feature/onboarding/widget/image_onboarding_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -40,7 +42,14 @@ class OnboardingScreen extends StatelessWidget {
              SizedBox(height: 50.h),
 
             /// Button
-            BottomButtonInOnBoardingScreen(),
+           CustomElvatedButton(
+              onPressed: () {
+                /// Navigate to home
+                context.go(AppNamingRouter.homeScreen);
+              },
+              icon: Icons.arrow_forward_ios,
+            ),
+            
           ],
         ),
       ),
